@@ -1,8 +1,14 @@
-from imp import load_source
+import importlib.util
 import yaml
 from utils import logs_handler
 
 logger = logs_handler.create_logger(__name__, remote_logging=False) 
+
+def load_module_from_file(file_path, module_name):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 def dict_parser(dicts, id):
     for k, v in dicts.items():

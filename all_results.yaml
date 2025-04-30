@@ -1,0 +1,245 @@
+{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\secure/secure_deployment.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "null": [
+                        [
+                            {
+                                "apiGroups": [
+                                    "apps"
+                                ],
+                                "resources": [
+                                    "deployments"
+                                ],
+                                "verbs": [
+                                    "get",
+                                    "list"
+                                ]
+                            },
+                            {
+                                "apiGroups": [
+                                    ""
+                                ],
+                                "resources": [
+                                    "pods"
+                                ],
+                                "verbs": [
+                                    "get",
+                                    "list"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "lineno": null,
+            "message": "No vulnerable RBAC permisions found",
+            "severity": null
+        }
+    ]
+}{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\secure/secure_k8s.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "null": [
+                        [
+                            {
+                                "apiGroups": [
+                                    ""
+                                ],
+                                "resources": [
+                                    "pods"
+                                ],
+                                "verbs": [
+                                    "get",
+                                    "list"
+                                ]
+                            },
+                            {
+                                "apiGroups": [
+                                    ""
+                                ],
+                                "resources": [
+                                    "configmaps"
+                                ],
+                                "verbs": [
+                                    "get"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "lineno": null,
+            "message": "No vulnerable RBAC permisions found",
+            "severity": null
+        }
+    ]
+}{}{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\secure/secure_secrets.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "rules:\n": {
+                        "apiGroups": [
+                            ""
+                        ],
+                        "resourceNames": [
+                            "app-secrets"
+                        ],
+                        "resources": [
+                            "secrets"
+                        ],
+                        "verbs": [
+                            "get"
+                        ]
+                    }
+                }
+            ],
+            "lineno": 17,
+            "message": "IMPORTANT1: Full or Secrets Read Permissions defined",
+            "severity": "High"
+        }
+    ]
+}{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\vulnerable/vulnerable_deployment.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "rules:\n": {
+                        "apiGroups": [
+                            "*"
+                        ],
+                        "resources": [
+                            "*"
+                        ],
+                        "verbs": [
+                            "*"
+                        ]
+                    }
+                }
+            ],
+            "lineno": 40,
+            "message": "IMPORTANT Alert: Dangerous RBAC Permissions defined",
+            "severity": "Critical"
+        },
+        {
+            "id": "volumes",
+            "line": [
+                {
+                    "volumes:\n      ": {
+                        "hostPath": {
+                            "path": "/"
+                        },
+                        "name": "host-root"
+                    }
+                }
+            ],
+            "lineno": 31,
+            "message": "[Alert] - Root hostPath was found used",
+            "severity": "Medium"
+        },
+        {
+            "id": "privileged",
+            "line": "true",
+            "lineno": 19,
+            "message": "Alert - Privileged flag found to set True.",
+            "severity": "High"
+        },
+        {
+            "id": "allowPrivilegeEscalation",
+            "line": "true",
+            "lineno": 20,
+            "message": "Alert - Privilege Escalation found to set True.",
+            "severity": "Medium"
+        }
+    ]
+}{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\vulnerable/vulnerable_k8s.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "rules:\n": {
+                        "apiGroups": [
+                            "*"
+                        ],
+                        "resources": [
+                            "*"
+                        ],
+                        "verbs": [
+                            "*"
+                        ]
+                    }
+                }
+            ],
+            "lineno": 24,
+            "message": "IMPORTANT Alert: Dangerous RBAC Permissions defined",
+            "severity": "Critical"
+        },
+        {
+            "id": "volumes",
+            "line": [
+                {
+                    "volumes:\n  ": {
+                        "hostPath": {
+                            "path": "/"
+                        },
+                        "name": "host-root"
+                    }
+                }
+            ],
+            "lineno": 15,
+            "message": "[Alert] - Root hostPath was found used",
+            "severity": "Medium"
+        },
+        {
+            "id": "privileged",
+            "line": "true",
+            "lineno": 10,
+            "message": "Alert - Privileged flag found to set True.",
+            "severity": "High"
+        },
+        {
+            "id": "allowPrivilegeEscalation",
+            "line": "true",
+            "lineno": 11,
+            "message": "Alert - Privilege Escalation found to set True.",
+            "severity": "Medium"
+        }
+    ]
+}{}{
+    "C:\\Users\\tanma\\OneDrive\\Desktop\\PBL\\scodescanner\\test_yaml_files\\vulnerable/vulnerable_secrets.yaml": [
+        {
+            "id": "rules",
+            "line": [
+                {
+                    "null": [
+                        [
+                            {
+                                "apiGroups": [
+                                    ""
+                                ],
+                                "resources": [
+                                    "secrets"
+                                ],
+                                "verbs": [
+                                    "*"
+                                ]
+                            }
+                        ]
+                    ]
+                }
+            ],
+            "lineno": null,
+            "message": "No vulnerable RBAC permisions found",
+            "severity": null
+        }
+    ]
+}

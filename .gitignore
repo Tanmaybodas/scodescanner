@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+utils/logs/
+*.log
+
+# Test files
+test_yaml_files/
+test_vulnerabilities/
+test_files/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db 

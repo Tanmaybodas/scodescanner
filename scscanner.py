@@ -36,7 +36,7 @@ lang = argss.command
 def main():
     
     starttime = time.time()
-    logger.info("Starting the scanner - " + str(time.strftime('%l:%M%p %z on %b %d, %Y')) +'\n' )
+    logger.info("Starting the scanner - " + str(time.strftime('%H:%M %Z on %b %d, %Y')) +'\n' )
     if lang == "php":
         jsonfile = argss.json
         check = argss.check
